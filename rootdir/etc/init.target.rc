@@ -500,3 +500,8 @@ service oppoalgo_daemon /vendor/bin/oppoalgo_daemon
 on property:sys.boot_completed=1
     start oppoalgo_daemon
 	
+on property:persist.sys.dt2w=0
+    write /proc/touchpanel/double_tap_enable 0
+
+on property:persist.sys.dt2w=1
+    write /proc/touchpanel/double_tap_enable 1

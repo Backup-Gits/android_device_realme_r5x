@@ -198,6 +198,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
+# DT2W
+PRODUCT_PACKAGES += \
+    DT2W-Service-r5x
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.r5x
