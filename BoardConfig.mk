@@ -86,7 +86,8 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 earlycon=msm_geni_serial,0x4a90000 loop.max_part=7 cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += kpti=off
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/4784000.sdhci
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -186,8 +187,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 BOARD_USES_METADATA_PARTITION := true
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
+BOARD_SUPER_PARTITION_GROUPS := oppo_dynamic_partitions
+BOARD_OPPO_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
+BOARD_SUPER_PARTITION_METADATA_DEVICE := system
+BOARD_SUPER_PARTITION_BLOCK_DEVICES := system vendor
 
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 

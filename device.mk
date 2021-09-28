@@ -21,6 +21,10 @@
 # definition file).
 #
 
+# Dynamic partitions
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
