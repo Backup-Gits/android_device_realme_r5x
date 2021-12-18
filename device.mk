@@ -37,6 +37,7 @@ OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     packages/apps/Bluetooth \
+    hardware/google/interfaces \
     vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/wfd-commonsys
 
@@ -347,8 +348,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power@1.3-service.r5x-libperfmgr \
+    android.hardware.power.stats@1.0-service.pixel \
 
 # Perf
 PRODUCT_PACKAGES += \
