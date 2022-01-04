@@ -25,7 +25,10 @@
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-#PRODUCT_ENFORCE_RRO_TARGETS := *
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1600
+TARGET_SCREEN_WIDTH := 720
+
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 RELAX_USES_LIBRARY_CHECK := true
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
@@ -33,6 +36,7 @@ OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    packages/apps/Bluetooth \
     vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/wfd-commonsys
 
@@ -144,10 +148,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# Dirac
-#PRODUCT_PACKAGES += \
-    KharaMeDirac
-
 # Crypto
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode=aes-256-cts
@@ -207,9 +207,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio \
     qcom.fmradio.xml
-
-#PRODUCT_BOOT_JARS += \
-    qcom.fmradio
 
 # Freeform Windows
 PRODUCT_COPY_FILES += \
@@ -406,9 +403,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
-#PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
@@ -508,9 +502,6 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libqdMetaData.vendor \
     vendor.display.config@2.0
-
-#PRODUCT_BOOT_JARS += \
-    WfdCommon
 
 PRODUCT_PACKAGES += \
     android.frameworks.automotive.display@1.0.vendor \
