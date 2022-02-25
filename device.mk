@@ -205,8 +205,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/egis.sh:install/bin/egis.sh
+PRODUCT_PACKAGES += \
+    init.egis.rc \
+    init.egis.sh
 
 # FM
 PRODUCT_PACKAGES += \

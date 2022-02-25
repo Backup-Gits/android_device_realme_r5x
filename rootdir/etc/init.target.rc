@@ -27,6 +27,8 @@
 #
 #
 
+import /system/etc/init/init.egis.rc
+
 on early-init
 
     write /proc/sys/kernel/sched_boost 1

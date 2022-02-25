@@ -1,0 +1,9 @@
+service egis_script /system/bin/init.egis.sh
+    class main
+    user root
+    oneshot
+
+on property:ro.fp.egis=1
+    mount none /vendor/fptmp/libets_teeclient_v2.so /vendor/lib64/hw/libets_teeclient_v2.so bind
+    mount none /vendor/fptmp/android.hardware.biometrics.fingerprint@2.1-service.r5x /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.r5x bind
+    restart vendor.fps_hal.r5x
